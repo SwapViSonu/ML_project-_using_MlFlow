@@ -2,6 +2,8 @@ pandas
 notebook
 numpy
 python-dotenv
+dvc
+mlflow
 mysql-connector-python
 pymysql
 scikit-learn

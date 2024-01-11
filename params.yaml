@@ -1,1 +1,4 @@
-KEY: VALUE
+RandomForestRegressor: 
+
+ n_estimators: 10
+ criterion: 'squared_error'
