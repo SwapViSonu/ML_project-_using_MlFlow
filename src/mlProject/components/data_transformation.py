@@ -1,6 +1,7 @@
 import os
 from mlProject import logger
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OrdinalEncoder
 import pandas as pd
 from mlProject.entity.config_entity import DataTransformationConfig
 
@@ -21,6 +22,8 @@ class DataTransformation:
 
     def train_test_spliting(self):
         data = pd.read_csv(self.config.data_path)
+        oe=OrdinalEncoder()
+        data[['state']]=oe.fit_transform(data[['state']])
 
         # Split the data into training and test sets. (0.75, 0.25) split.
         train, test = train_test_split(data)
